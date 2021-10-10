@@ -12,13 +12,14 @@ const PortfolioList = () => {
                 </p>
             </div>
 
-            <div className="ol-list">
+            <div className="pl-list">
+                <Portfolio/>
+                <Portfolio/>
                 <Portfolio/>
                 <Portfolio/>
                 <Portfolio/>
                 <Portfolio/>
             </div>
-
         </div>
     );
 }
