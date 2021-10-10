@@ -11,8 +11,6 @@ function About() {
                         src="https://images.pexels.com/photos/4841641/pexels-photo-4841641.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                         alt=""
                         className="about-img"/>
-
-
                 </div>
             </div>
             <div className="about-right">
