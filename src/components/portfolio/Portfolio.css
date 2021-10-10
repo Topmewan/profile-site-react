@@ -24,6 +24,16 @@
     border-radius: 50%;
     background-color: white;
 }
+.p-circle-one {
+    background-color: rgb(255,59,48);
+}
+.p-circle-two{
+    background-color: rgb(255,149,0);
+}
+
+.p-circle-three{
+    background-color: rgb(40,205,65);
+}
 
 .p-img {
     width: 100%;
