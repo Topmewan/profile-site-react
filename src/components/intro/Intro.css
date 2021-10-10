@@ -30,9 +30,27 @@
     overflow: hidden;
 }
 
+.i-title-wrapper {
+    height: 100%;
+    animation: move 10s ease-in-out infinite alternate;
+}
+
+@keyframes move {
+    50% {
+        transform: translateY(-50px);
+    }
+    50% {
+        transform: translateY(-50px);
+    }
+
+}
+
 .i-title-item {
     height: 50px;
     font-size: 30px;
     font-weight: bold;
     color: #59b256;
+    background: purple;
+    display: flex;
+    align-items: center;
 }
