@@ -1,5 +1,6 @@
 import './PortfolioList.css'
 import Portfolio from "../portfolio/Portfolio";
+import {portfolio} from "../../data";
 
 
 const PortfolioList = () => {
@@ -13,12 +14,14 @@ const PortfolioList = () => {
             </div>
 
             <div className="pl-list">
-                <Portfolio/>
-                <Portfolio/>
-                <Portfolio/>
-                <Portfolio/>
-                <Portfolio/>
-                <Portfolio/>
+                {portfolio.map((item) => (
+                    <Portfolio
+                        key ={item.id}
+                        img={item.img}
+                        link={item.link}
+                    />))}
+
+
             </div>
         </div>
     );
