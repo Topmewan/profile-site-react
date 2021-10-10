@@ -18,10 +18,7 @@ function About() {
             <div className="about-right">
                 <h1 className="about-title">About Me</h1>
                 <p className="about-sub">
-
-                </p>
-                <p className="about-desc">
-
+                    In my free time from writing code, I go in for sports. And in the evening I like to watch a good movie or TV series over a cup of tea.
                 </p>
             </div>
         </div>
