@@ -51,7 +51,12 @@
 }
 
 form {
-    margin-top: 20px;
+    /*margin-top: 20px;*/
+    width: 70%;
+    border: 1px solid #dfdfdf;
+    padding: 20px;
+    border-radius: 5px;
+    background: #fff;
 }
 
 input {
@@ -79,3 +84,4 @@ button {
     font-weight: 500;
     cursor: pointer;
 }
+

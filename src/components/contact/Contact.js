@@ -6,8 +6,10 @@ import email from '../../img/envelope-alt.svg';
 import location from '../../img/map-marker.svg';
 import {useRef} from "react";
 import emailjs from 'emailjs-com';
+import {useForm} from "react-hook-form";
 
 const Contact = () => {
+    const {register, formState:{errors},reset} = useForm();
     const formRef = useRef();
 
     const handleSubmit = (e) => {
@@ -15,16 +17,18 @@ const Contact = () => {
 
         emailjs.sendForm(
             'service_q0hodjj',
-            'template_oyga0rh',
+            'template_ki2s3mf',
             formRef.current,
             'user_q9vQqP9XnTkK0yPD322D1'
         )
             .then((result) => {
                 console.log(result.text);
+                reset();
             }, (error) => {
                 console.log(error.text);
             });
     }
+
     return (
         <div className='c'>
             <div className="c-bg"></div>
@@ -73,17 +77,80 @@ const Contact = () => {
                             </div>
                     </div>
                     <div className="c-right">
-                        <p className="c-desc">
-                            Have questions? Email me.
-                        </p>
-                        <form ref={formRef} onSubmit={handleSubmit}>
-                            <input type="text" placeholder='Name' name='user_name'/>
-                            <input type="text" placeholder='Subject' name='user_subject'/>
-                            <input type="text" placeholder='Email' name='user_email'/>
-                            <textarea rows='5' placeholder='Message' name='message'/>
-                            <button>Submit</button>
+                        <form ref={formRef} onSubmit={e => handleSubmit(e)}>
+                            <h1>Email me</h1>
+                            <div className="ui divider"></div>
+                            <div className="ui form">
+                                <div className="field">
+                                    <label>Name</label>
+                                    <input
+                                        type="text"
+                                        {...register('username', {required: 'Name is required',
+                                        minLength:{
+                                            value:3,
+                                            message:"Minimum Required length is 3",
+                                        },
+                                            pattern: {
+                                            value:/^[a-zA-Z ]*$/,
+                                                message:'Only text allowed'
+                                            }
+                                        })}
+                                        placeholder='Name'
+                                    />
+                                </div>
+                                {errors.username && (<p>{errors.username.message}</p>)}
+                                <div className="field">
+                                    <label>Subject</label>
+                                    <input
+                                        type="text"
+                                        {...register('subject',{required:'Subject is required',
+                                        minLength:{
+                                            value:5,
+                                            message: 'Minimum Required length is 5',
+                                        },
+                                        })}
+                                    />
+                                </div>
+                                {errors.subject && (<p>{errors.subject.message}</p>)}
+                                <div className="field">
+                                    <label>Email</label>
+                                    <input
+                                        type="email"
+                                        placeholder='Email'
+                                        {...register('email', {required:'Email is required',
+                                            pattern:{
+                                                value: /^\S+@\S+$/i,
+                                                message: 'Invalid Email',
+                                            },
+                                        })}
+                                    />
+                                </div>
+                                {errors.email && (<p>{errors.email.message}</p>)}
+
+
+                                <div className="field">
+                                    <label>Message</label>
+                                    <textarea
+                                        {...register("message",{required: "Message is required",
+                                        minLength:{
+                                            value:10,
+                                            message: 'Minimum Required length is 10',
+                                        },
+                                        maxLength:{
+                                            value:50,
+                                            message:"Maximum Required length is 50",
+                                        }
+                                        })}
+                                        rows='3'
+                                        placeholder='Message'
+                                    />
+                                    {errors.message && (<p>{errors.message.message}</p>)}
+                                </div>
+                                <button className='fluid ui button blue'>Submit</button>
+                            </div>
                         </form>
                     </div>
+
                 </div>
         </div>
 
