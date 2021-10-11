@@ -4,8 +4,27 @@ import linkedin from '../../img/linkedin.svg';
 import github from '../../img/github.svg';
 import email from '../../img/envelope-alt.svg';
 import location from '../../img/map-marker.svg';
+import {useRef} from "react";
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
+    const formRef = useRef();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm(
+            'service_q0hodjj',
+            'template_oyga0rh',
+            formRef.current,
+            'user_q9vQqP9XnTkK0yPD322D1'
+        )
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
+    }
     return (
         <div className='c'>
             <div className="c-bg"></div>
@@ -57,20 +76,15 @@ const Contact = () => {
                         <p className="c-desc">
                             Have questions? Email me.
                         </p>
-                        <form action="">
+                        <form ref={formRef} onSubmit={handleSubmit}>
                             <input type="text" placeholder='Name' name='user_name'/>
                             <input type="text" placeholder='Subject' name='user_subject'/>
                             <input type="text" placeholder='Email' name='user_email'/>
                             <textarea rows='5' placeholder='Message' name='message'/>
                             <button>Submit</button>
                         </form>
-
                     </div>
                 </div>
-
-
-
-
         </div>
 
     );

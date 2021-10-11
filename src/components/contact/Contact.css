@@ -70,3 +70,12 @@ textarea {
     font-size: 14px;
     padding-left: 10px;
 }
+
+button {
+    border: none;
+    padding: 15px;
+    background-color: #59b256;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
