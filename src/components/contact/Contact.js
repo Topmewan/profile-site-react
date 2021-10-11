@@ -9,11 +9,10 @@ import emailjs from 'emailjs-com';
 import {useForm} from "react-hook-form";
 
 const Contact = () => {
-    const {register, formState:{errors},reset} = useForm();
+    const {register, handleSubmit,formState:{errors},reset} = useForm();
     const formRef = useRef();
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const onSubmit = (data) => {
 
         emailjs.sendForm(
             'service_q0hodjj',
@@ -21,8 +20,8 @@ const Contact = () => {
             formRef.current,
             'user_q9vQqP9XnTkK0yPD322D1'
         )
-            .then((result) => {
-                console.log(result.text);
+            .then((data) => {
+                console.log(data.text);
                 reset();
             }, (error) => {
                 console.log(error.text);
@@ -77,7 +76,7 @@ const Contact = () => {
                             </div>
                     </div>
                     <div className="c-right">
-                        <form ref={formRef} onSubmit={e => handleSubmit(e)}>
+                        <form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
                             <h1>Email me</h1>
                             <div className="ui divider"></div>
                             <div className="ui form">
