@@ -8,8 +8,7 @@ import location from '../../img/map-marker.svg';
 const Contact = () => {
     return (
         <div className='c'>
-            <div className="c-bg">
-
+            <div className="c-bg"></div>
                 <div className="c-wrapper">
                     <div className="c-left">
                         <h1 className="c-title">Contacts</h1>
@@ -17,7 +16,7 @@ const Contact = () => {
                                 <div className="c-info-item">
                                     <img
                                         src={phone}
-                                        alt={phone}
+                                        alt=''
                                         className="c-icon"
                                     />
                                     +7 931 336 21 50
@@ -31,7 +30,7 @@ const Contact = () => {
                                     anon8733@gmail.com
                                 </div>
                                 <div className="c-info-item">
-                                    <a className='c-icon'href="https://www.linkedin.com/in/denis-gareev-b9a303212" target='-_blank'>
+                                    <a className='c-icon' href="https://www.linkedin.com/in/denis-gareev-b9a303212" target='-_blank'>
                                         <img  src={linkedin} alt=""/>
                                     </a>
 
@@ -53,13 +52,21 @@ const Contact = () => {
                                     Saint Petersburg, Russia
                                 </div>
                             </div>
-
                     </div>
                     <div className="c-right">
+                        <p className="c-desc">
+                            Have questions? Email me.
+                        </p>
+                        <form action="">
+                            <input type="text" placeholder='Name' name='user_name'/>
+                            <input type="text" placeholder='Subject' name='user_subject'/>
+                            <input type="text" placeholder='Email' name='user_email'/>
+                            <textarea rows='5' placeholder='Message' name='message'/>
+                            <button>Submit</button>
+                        </form>
 
                     </div>
                 </div>
-            </div>
 
 
 
