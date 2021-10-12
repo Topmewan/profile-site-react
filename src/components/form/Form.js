@@ -1,4 +1,5 @@
-import './Form.css';
+// import './Form.css';
+import './form.scss';
 import contact from '../../img/contact.png';
 import {useRef} from "react";
 import emailjs from 'emailjs-com';
