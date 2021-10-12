@@ -9,7 +9,7 @@ import emailjs from 'emailjs-com';
 import {useForm} from "react-hook-form";
 
 const Contact = () => {
-    const {register, handleSubmit,formState:{errors},reset} = useForm();
+    const {register, handleSubmit,formState:{errors},reset,trigger} = useForm();
     const formRef = useRef();
 
     const onSubmit = (data) => {
@@ -20,8 +20,8 @@ const Contact = () => {
             formRef.current,
             'user_q9vQqP9XnTkK0yPD322D1'
         )
-            .then((data) => {
-                console.log(data.text);
+            .then((result) => {
+                console.log(result.text);
                 reset();
             }, (error) => {
                 console.log(error.text);
@@ -94,6 +94,9 @@ const Contact = () => {
                                                 message:'Only text allowed'
                                             }
                                         })}
+                                        onKeyUp={()=> {
+                                            trigger('username');
+                                        }}
                                         placeholder='Name'
                                     />
                                 </div>
@@ -108,6 +111,10 @@ const Contact = () => {
                                             message: 'Minimum Required length is 5',
                                         },
                                         })}
+
+                                        onKeyUp={()=> {
+                                            trigger('subject');
+                                        }}
                                     />
                                 </div>
                                 {errors.subject && (<p>{errors.subject.message}</p>)}
@@ -122,6 +129,10 @@ const Contact = () => {
                                                 message: 'Invalid Email',
                                             },
                                         })}
+
+                                        onKeyUp={()=> {
+                                            trigger('email');
+                                        }}
                                     />
                                 </div>
                                 {errors.email && (<p>{errors.email.message}</p>)}
@@ -140,16 +151,20 @@ const Contact = () => {
                                             message:"Maximum Required length is 50",
                                         }
                                         })}
+
+                                        onKeyUp={()=> {
+                                            trigger('message');
+                                        }}
+
                                         rows='3'
                                         placeholder='Message'
                                     />
-                                    {errors.message && (<p>{errors.message.message}</p>)}
+                                    {errors.message && (<p className=''>{errors.message.message}</p>)}
                                 </div>
-                                <button className='fluid ui button blue'>Submit</button>
+                                <button className='fluid ui button'>Submit</button>
                             </div>
                         </form>
                     </div>
-
                 </div>
         </div>
 

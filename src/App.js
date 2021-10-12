@@ -2,7 +2,7 @@
 import Intro from "./components/intro/Intro";
 import About from './components/about/About';
 import PortfolioList from "./components/portfolioList/PortfolioList";
-import Contact from "./components/contact/Contact";
+import Form from "./components/form/Form";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Intro/>
         <About/>
         <PortfolioList/>
-      <Contact/>
+        <Form/>
     </div>
   );
 }
