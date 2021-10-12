@@ -6,8 +6,10 @@ import Form from "./components/form/Form";
 import Topbar from "./components/topbar/Topbar";
 
 import './app.scss';
+import {useState} from "react";
 
 function App() {
+    const [menuOpen,setMenuOpen] = useState()
   return (
     <div>
         <div className="app">
