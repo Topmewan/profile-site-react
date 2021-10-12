@@ -1,29 +1,43 @@
 // import './Intro.css';
 import './intro.scss';
 import Me from '../../img/me.png';
+import down from '../../img/down.png'
+import {init} from "ityped";
+import {useEffect,useRef} from "react";
 
 const Intro = () => {
+    const textRef = useRef();
+
+    useEffect(()=>{
+        init(textRef.current,{
+            showCursor: true,
+            backDelay:1500,
+            backSpeed:60,
+            strings: ['Engineer', 'Sportsmen' ]
+            });
+
+    },[])
     return (
-        <div className='i'>
-            <div className="i-left">
-                <div className="i-left-wrapper">
-                    <h1 className='i-intro'>Hi, My name is</h1>
-                    <h2 className='i-name'>Denis</h2>
-                    <div className="i-title">
-                        <div className="i-title-wrapper">
-                            <div className="i-title-item">Web Developer</div>
-                            <div className="i-title-item">Engineer</div>
-                        </div>
-                    </div>
-                    <p className="i-desc">
-                        I am a web developer, I study new technologies with interest and enjoy life. I am constantly putting my knowledge into practice and improving my skills. My main guideline is the result.
-                    </p>
+        <div className='intro' id='intro'>
+            <div className="left">
+                <div className="imgContainer">
+                    <img src={Me} alt=""/>
                 </div>
             </div>
-            <div className="i-right">
-                <div className="i-bg"></div>
-                <img src={Me} alt="" className="i-image"/>
+
+            <div className="right">
+                <div className="wrapper">
+                    <h2>Hi There, I'm</h2>
+                    <h1>Denis</h1>
+                    <h3>Web Developer <span ref={textRef}></span></h3>
+                </div>
+                <a href="">
+                    <img src={down} alt=""/>
+                </a>
+
+
             </div>
+
         </div>
     );
 
