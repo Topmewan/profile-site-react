@@ -1,8 +1,9 @@
 @import "../../root";
 
 .intro {
-  background-color: white;
+  //background-color: white;
   display: flex;
+  background-color: #FFE4E2;
 
   @include mobile{
     flex-direction: column;

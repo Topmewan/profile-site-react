@@ -7,18 +7,8 @@
     background: #fae9fb;
     position: relative;
 }
-.big::before{
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background: #ba24c2;
-    clip-path: polygon(62% 0, 100% 0, 100% 100%, 40% 100%);
-}
+
 .container{
-    z-index: 12;
     max-width: 1050px;
     width: 100%;
     background: #fff;
@@ -122,9 +112,11 @@
     cursor: pointer;
     letter-spacing: 1px;
     transition: all 0.3s ease;
+
 }
 .content .input-box input[type="submit"]:hover{
-    background-color: #d43ddb;
+    background-color: #15023a;
+
 }
 @media (max-width:1000px) {
     .content .image-box{

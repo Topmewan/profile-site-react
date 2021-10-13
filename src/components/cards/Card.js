@@ -5,7 +5,8 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 
 const Item = styled(Paper)(() => ({
-    color:'crimson',
+    color:'#BF4C41',
+    fontWeight:500,
     margin: 0,
     textAlign: 'center',
     boxShadow: 'none',
@@ -13,7 +14,7 @@ const Item = styled(Paper)(() => ({
     "&:hover": {
         background:'rgba(240, 92, 121)',
         color:'white',
-        border: '1px solid black',
+        // border: '1px solid black',
     }
 }));
 

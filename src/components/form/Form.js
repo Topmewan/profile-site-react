@@ -1,7 +1,7 @@
 import './Form.css';
 // import './form.scss';
 import contact from '../../img/contact.png';
-import {useRef} from "react";
+import {useRef, useState} from "react";
 import emailjs from 'emailjs-com';
 import {useForm} from "react-hook-form";
 
@@ -9,6 +9,7 @@ import {useForm} from "react-hook-form";
 const  Form = () => {
     const {register, handleSubmit,formState:{errors},reset,trigger} = useForm();
     const formRef = useRef();
+    const [done,setDone] = useState(false)
 
     const onSubmit = (data) => {
 
@@ -21,6 +22,7 @@ const  Form = () => {
             .then((result) => {
                 console.log(result.text);
                 reset();
+                setDone(!done)
             }, (error) => {
                 console.log(error.text);
             });
@@ -103,6 +105,7 @@ const  Form = () => {
                         <div className="input-box">
                             <input type="submit" value="Send Message"/>
                         </div>
+                        {done && <div>Thanks!</div>}
                     </form>
                 </div>
             </div>
