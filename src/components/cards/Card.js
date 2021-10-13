@@ -6,9 +6,7 @@ import Grid from '@mui/material/Grid';
 
 const Item = styled(Paper)(() => ({
     color:'crimson',
-
     margin: 0,
-    padding: '2px',
     textAlign: 'center',
     boxShadow: 'none',
 
@@ -72,7 +70,7 @@ export default function Skills() {
             desc2:
                 "Express",
             desc3:
-                "MongoDB && Firebase",
+                "MongoDB",
         },
     ];
 
@@ -81,7 +79,7 @@ export default function Skills() {
             <h1>Skills</h1>
             <div className="skill-container">
                 {data.map((d) => (
-                    <div className={d.featured ? "card featured" : "card"}>
+                    <div className={d.featured ? "card featured" : "card"} key={d.id}>
                         <div className="bottom">
                             <h3>{d.name}</h3>
                         </div>

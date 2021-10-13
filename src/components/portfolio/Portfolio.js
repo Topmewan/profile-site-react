@@ -10,11 +10,13 @@ export default function Portfolio() {
             <h1>Portfolio</h1>
             <div className="portfolio-container">
                 {portfolio.map((d) => (
-                    <div className="item">
-                        <img
-                            src={d.img}
-                            alt=""
-                        />
+                    <div className="item" key={d.id}>
+                        <a href={d.link} target='_blank' rel="noreferrer" >
+                            <img
+                                src={d.img}
+                                alt=""
+                            />
+                        </a>
                         <h3>{d.title}</h3>
                     </div>
                 ))}
