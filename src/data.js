@@ -1,38 +1,34 @@
 export const portfolio = [
     {
-        id:1,
-        img: 'https://i.postimg.cc/CxksQWf6/screencapture-burgers-by-denya-netlify-app-restaurant-hot-burger-maroseyka-2021-10-10-21-56-55.png',
-        link: 'https://burgers-by-denya.netlify.app'
-
+        id: 1,
+        title: "Burger Admin Menu",
+        img:
+            "https://i.postimg.cc/3xV7jS9Y/burger.png",
     },
     {
-        id:2,
-        img: 'https://i.postimg.cc/7hXZhPcQ/screencapture-tv-search-by-denya-netlify-app-2021-10-10-22-05-50.png',
-        link: 'https://tv-search-by-denya.netlify.app/'
-
+        id: 2,
+        title: "TV Search App",
+        img:
+            "https://i.postimg.cc/jdRjCF31/screenshot.png",
     },
     {
-        id:3,
-        img: 'https://i.postimg.cc/cJNGqykK/screencapture-topmewan-github-io-Magazine-2021-10-10-22-08-22.png',
-        link: 'https://topmewan.github.io/Magazine/'
-
+        id: 3,
+        title: "Realtime Chat",
+        img:
+            "https://i.postimg.cc/P5SpmKbr/chat.png",
     },
     {
-        id:4,
-        img: 'https://i.postimg.cc/BZ831gFn/screencapture-todo-by-denya-netlify-app-2021-10-10-22-11-28.png',
-        link: 'https://todo-by-denya.netlify.app/'
-
-    },
+        id: 4,
+        title: "Phone Shop",
+        img:"https://i.postimg.cc/MHYKzKdK/mag.png"},
     {
-        id:5,
-        img: 'https://i.postimg.cc/fyFmyv1P/screencapture-chat-by-denya-netlify-app-2021-10-10-22-25-27.png',
-        link: 'https://chat-by-denya.netlify.app/'
-
-    },
+        id: 5,
+        title: "Todo App",
+        img:
+            "https://i.postimg.cc/rp2bNCq3/to.png"    },
     {
-        id:6,
-        img: 'https://i.postimg.cc/yYDNd4mQ/screencapture-redux-store-by-denya-netlify-app-2021-10-11-00-53-02.png',
-        link: 'https://redux-store-by-denya.netlify.app/'
-
-    },
+        id: 6,
+        title: "Redux Clothing Store",
+        img:
+            'https://i.postimg.cc/NG26Qh68/redux.png'    },
 ];

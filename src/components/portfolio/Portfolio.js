@@ -1,22 +1,24 @@
-import './Portfolio.css';
+import './Portfolio.scss';
+import {portfolio} from "../../data";
 
 
-const Portfolio = (props)  => {
+export default function Portfolio() {
+
+
     return (
-        <div className='p'>
-            <div className="p-browser">
-                <div className="p-circle p-circle-one"></div>
-                <div className="p-circle p-circle-two"></div>
-                <div className="p-circle p-circle-three"></div>
+        <div className="portfolio" id="portfolio">
+            <h1>Portfolio</h1>
+            <div className="portfolio-container">
+                {portfolio.map((d) => (
+                    <div className="item">
+                        <img
+                            src={d.img}
+                            alt=""
+                        />
+                        <h3>{d.title}</h3>
+                    </div>
+                ))}
             </div>
-            <a href={props.link} target='_blank' rel='noreferrer'>
-                <img src={props.img} alt="" className="p-img"/>
-            </a>
-
-
-
         </div>
     );
 }
-
-export default Portfolio;

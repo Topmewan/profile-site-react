@@ -13,7 +13,7 @@ const Intro = () => {
             showCursor: true,
             backDelay:1500,
             backSpeed:60,
-            strings: ['Engineer', 'Sportsmen' ]
+            strings: ['Web Developer','Engineer','Sportsmen','Coffee Lover','Athlete']
             });
 
     },[])
@@ -29,7 +29,7 @@ const Intro = () => {
                 <div className="wrapper">
                     <h2>Hi There, I'm</h2>
                     <h1>Denis</h1>
-                    <h3>Web Developer <span ref={textRef}></span></h3>
+                    <h3><span ref={textRef}></span></h3>
                 </div>
                 <a href="">
                     <img src={down} alt=""/>

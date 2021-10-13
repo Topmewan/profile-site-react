@@ -8,7 +8,7 @@ const Menu = ({menuOpen,setMenuOpen}) => {
                     <a href="#intro">Home</a>
                 </li>
                 <li onClick={() => setMenuOpen(!menuOpen)}>
-                    <a href="#intro">portfolio</a>
+                    <a href="#portfolio">portfolio</a>
                 </li>
                 <li onClick={() => setMenuOpen(!menuOpen)}>
                     <a href="#">Home</a>
