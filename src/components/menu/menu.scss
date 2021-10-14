@@ -16,10 +16,11 @@
   transition: all 1s ease;
 
   &.active {
-    right: -120px;
+    right: 0;
+    text-align: center;
 
     @include mobile {
-      right: 0;
+      right: -80px;
 
     }
   }
@@ -30,8 +31,16 @@
     list-style: none;
     font-weight: 300;
     font-size: 30px;
-    color: white;
+    color: $whiteColor;
     width: 60%;
+
+    @include mobile {
+      right: -70px;
+      padding: 0;
+      text-align: center;
+      margin-right: 70px;
+
+    }
 
     li{
       margin-bottom: 25px;

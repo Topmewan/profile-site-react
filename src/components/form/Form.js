@@ -1,15 +1,24 @@
-import './Form.css';
-// import './form.scss';
+// import './Form.css';
+import './form.scss';
 import contact from '../../img/contact.png';
-import {useRef, useState} from "react";
+import {useContext, useRef, useState} from "react";
 import emailjs from 'emailjs-com';
 import {useForm} from "react-hook-form";
+import AlertContext from './alertContext';
+import Alert from "./Alert";
 
 
 const  Form = ({menuOpen,setMenuOpen}) => {
     const {register, handleSubmit,formState:{errors},reset,trigger} = useForm();
     const formRef = useRef();
     const [done,setDone] = useState(false)
+
+    const {alert,setAlert} = useContext(AlertContext);
+
+    const afterSubmit = () =>{
+            setAlert('Thank your for message!', 'danger');
+
+    }
 
     const onSubmit = (data) => {
 
@@ -23,13 +32,14 @@ const  Form = ({menuOpen,setMenuOpen}) => {
                 console.log(result.text);
                 reset();
                 setDone(!done)
+                afterSubmit();
             }, (error) => {
                 console.log(error.text);
             });
     }
 
     return (
-        <div className='big' onClick={()=> setMenuOpen(false)}>
+        <div className='form' id='form' onClick={()=> setMenuOpen(false)}>
             <div className="container">
                 <div className="content">
                     <div className="image-box">
@@ -105,7 +115,8 @@ const  Form = ({menuOpen,setMenuOpen}) => {
                         <div className="input-box">
                             <input type="submit" value="Send Message"/>
                         </div>
-                        {done && <div>Thanks!</div>}
+                        {alert? <Alert messag={alert.messag} type={alert.type}/> : null}
+                        {/*{done && <div>Thanks!</div>}*/}
                     </form>
                 </div>
             </div>

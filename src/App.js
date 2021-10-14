@@ -7,6 +7,7 @@ import Skills from "./components/cards/Skills";
 import './app.scss';
 import {useState} from "react";
 import Menu from "./components/menu/Menu";
+import AlertState from "./components/form/AlertState";
 
 function App() {
     const [menuOpen,setMenuOpen] = useState(false);
@@ -21,7 +22,9 @@ function App() {
                 <Intro menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
                 <Portfolio menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
                 <Skills menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
-                <Form menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+                <AlertState>
+                    <Form menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+                </AlertState>
             </div>
         </div>
     </div>

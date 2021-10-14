@@ -55,6 +55,7 @@
         margin: 15px 0;
       }
 
+
       &.featured{
         width: 300px;
         height: 75%;
@@ -80,6 +81,12 @@
           margin-bottom: -10px;
 
         }
+        @include littleMobile{
+          transform: scale(2);
+
+        }
+
+
 
 
 
@@ -100,6 +107,7 @@
               width: 20px;
               height: 20px;
             }
+
           }
         }
       }
@@ -116,6 +124,10 @@
         @include mobile{
           font-size: 12px;
           padding: 0px;
+        }
+
+        @include littleMobile{
+          display: none;
         }
       }
       .bottom {

@@ -8,19 +8,14 @@ const Menu = ({menuOpen,setMenuOpen}) => {
                     <a href="#intro">Home</a>
                 </li>
                 <li onClick={() => setMenuOpen(!menuOpen)}>
-                    <a href="#portfolio">portfolio</a>
+                    <a href="#portfolio">Portfolio</a>
                 </li>
                 <li onClick={() => setMenuOpen(!menuOpen)}>
-                    <a href="#">Home</a>
+                    <a href="#skill">Skills</a>
                 </li>
                 <li onClick={() => setMenuOpen(!menuOpen)}>
-                    <a href="#">Home</a>
+                    <a href="#form">Contact</a>
                 </li>
-                <li onClick={() => setMenuOpen(!menuOpen)}>
-                    <a href="#">Home</a>
-                </li>
-
-
             </ul>
         </div>
 

@@ -75,19 +75,19 @@
 
   &.active {
     background-color: $mainColor;
-    color: white;
+    color: $whiteColor;
 
     .hamburger {
       span {
         &:first-child {
-          background-color: white;
+          background-color: $whiteColor;
           transform: rotate(45deg);
         }
         &:nth-child(2) {
           opacity: 0;
         }
         &:last-child {
-          background-color: white;
+          background-color: $whiteColor;
           transform: rotate(-45deg);
         }
       }

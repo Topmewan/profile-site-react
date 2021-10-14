@@ -1,16 +1,19 @@
-.big {
+@import "../../root";
+
+
+.form {
+  height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #fae9fb;
-
+  position: relative;
 }
 .container {
-
   max-width: 1050px;
   width: 100%;
-  background: #fff;
+  background: $whiteColor;
   border-radius: 12px;
   margin: 0 20px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
@@ -35,15 +38,16 @@
   }
   form {
     width: 40%;
+    margin-right: 30px;
   }
   .input-box {
     height: 50px;
     width: 100%;
-    margin-right: 10%;
+    margin: 16px 0;
     position: relative;
     input {
-      //position: absolute;
-      height: 80%;
+      position: absolute;
+      height: 100%;
       width: 100%;
       border-radius: 6px;
       font-size: 16px;
@@ -54,15 +58,15 @@
       transition: all 0.3s ease;
       &:focus {
         border-color: #ba24c2;
-        background-color: #fff;
+        background-color: $whiteColor;
       }
       &:valid {
         border-color: #ba24c2;
-        background-color: #fff;
+        background-color: $whiteColor;
       }
     }
     &::placeholder {
-      //position: absolute;
+      position: absolute;
       left: 18px;
       top: 50%;
       color: #636c72;
@@ -72,7 +76,7 @@
       transition: all 0.3s ease;
     }
     input[type="submit"] {
-      color: #fff;
+      color: $whiteColor;
       background: #ba24c2;
       padding-left: 0;
       font-size: 18px;
@@ -86,29 +90,27 @@
     }
   }
   .message-box {
-    margin-top: 10px;
     min-height: 100px;
     position: relative;
     textarea {
       position: absolute;
-      height: 70%;
+      height: 100%;
       width: 100%;
       font-size: 16px;
       padding: 10px 16px;
       resize: none;
       background: #fae9fb;
       border: 2px solid transparent;
-
       border-radius: 6px;
       outline: none;
       transition: all 0.3s ease;
       &:focus {
         border-color: #ba24c2;
-        background-color: #fff;
+        background-color: $whiteColor;
       }
     }
     &::placeholder {
-      //position: absolute;
+      position: absolute;
       font-size: 15px;
       color: #636c72;
       left: 18px;
@@ -119,7 +121,7 @@
   }
 }
 .p-valid {
-  margin: 5px 20px;
+  margin: 15px 20px;
   left: 2px;
   color: red;
 }
@@ -138,8 +140,7 @@
     }
     form {
       width: 100%;
-      margin: 30px;
+      margin-left: 30px;
     }
-
   }
 }
