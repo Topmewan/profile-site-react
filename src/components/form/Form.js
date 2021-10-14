@@ -6,7 +6,7 @@ import emailjs from 'emailjs-com';
 import {useForm} from "react-hook-form";
 
 
-const  Form = () => {
+const  Form = ({menuOpen,setMenuOpen}) => {
     const {register, handleSubmit,formState:{errors},reset,trigger} = useForm();
     const formRef = useRef();
     const [done,setDone] = useState(false)
@@ -29,7 +29,7 @@ const  Form = () => {
     }
 
     return (
-        <div className='big'>
+        <div className='big' onClick={()=> setMenuOpen(false)}>
             <div className="container">
                 <div className="content">
                     <div className="image-box">

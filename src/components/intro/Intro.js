@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import Me from '../../img/me.png';
 import Down from '../../img/down.png'
 
-export default function Intro() {
+export default function Intro({ menuOpen, setMenuOpen }) {
     const textRef = useRef();
 
     useEffect(() => {
@@ -17,7 +17,7 @@ export default function Intro() {
     }, []);
 
     return (
-        <div className="intro" id="intro">
+        <div className="intro" id="intro" onClick={()=> setMenuOpen(false)}>
             <div className="left">
                 <div className="imgContainer">
                     <img src={Me} alt="" />

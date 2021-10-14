@@ -1,4 +1,4 @@
-import "./card.scss";
+import "./skills.scss";
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -20,7 +20,7 @@ const Item = styled(Paper)(() => ({
 
 
 
-export default function Skills() {
+export default function Skills({menuOpen,setMenuOpen}) {
 
     const data = [
         {
@@ -76,7 +76,7 @@ export default function Skills() {
     ];
 
     return (
-        <div className="skill" id="skill">
+        <div className="skill" id="skill" onClick={()=> setMenuOpen(false)}>
             <h1>Skills</h1>
             <div className="skill-container">
                 {data.map((d) => (

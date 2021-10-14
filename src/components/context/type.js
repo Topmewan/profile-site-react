@@ -1,0 +1,1 @@
+export const CLOSE_TOPBAR = "CLOSE_TOPBAR";

@@ -3,7 +3,7 @@ import Intro from "./components/intro/Intro";
 import Portfolio from "./components/portfolio/Portfolio";
 import Form from "./components/form/Form";
 import Topbar from "./components/topbar/Topbar";
-import Card from "./components/cards/Card";
+import Skills from "./components/cards/Skills";
 import './app.scss';
 import {useState} from "react";
 import Menu from "./components/menu/Menu";
@@ -18,10 +18,10 @@ function App() {
             <Topbar menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
             <Menu menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
             <div className="sections">
-                <Intro/>
-                <Portfolio/>
-                <Card/>
-                <Form/>
+                <Intro menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+                <Portfolio menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+                <Skills menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
+                <Form menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>
             </div>
         </div>
     </div>

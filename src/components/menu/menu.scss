@@ -16,7 +16,12 @@
   transition: all 1s ease;
 
   &.active {
-    right: 0;
+    right: -120px;
+
+    @include mobile {
+      right: 0;
+
+    }
   }
 
   ul{

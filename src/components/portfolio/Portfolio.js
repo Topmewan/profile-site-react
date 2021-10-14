@@ -2,11 +2,11 @@ import './Portfolio.scss';
 import {portfolio} from "../../data";
 
 
-export default function Portfolio() {
+export default function Portfolio({menuOpen,setMenuOpen}) {
 
 
     return (
-        <div className="portfolio" id="portfolio">
+        <div className="portfolio" id="portfolio" onClick={()=> setMenuOpen(false)}>
             <h1>Portfolio</h1>
             <div className="portfolio-container">
                 {portfolio.map((d) => (
